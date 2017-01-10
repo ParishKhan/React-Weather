@@ -26626,6 +26626,11 @@
 	            'h1',
 	            null,
 	            'About Page'
+	        ),
+	        _react2.default.createElement(
+	            'p',
+	            null,
+	            'This is an about page'
 	        )
 	    );
 	};
@@ -26656,6 +26661,11 @@
 	            'h1',
 	            null,
 	            'Examples Page'
+	        ),
+	        _react2.default.createElement(
+	            'p',
+	            null,
+	            'This is an Example page'
 	        )
 	    );
 	};
