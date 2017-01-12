@@ -25086,8 +25086,8 @@
 	                null,
 	                _react2.default.createElement(
 	                    'h1',
-	                    null,
-	                    'Weather Page'
+	                    { className: 'text-center' },
+	                    'Get Weather'
 	                ),
 	                _react2.default.createElement(_WeatherForm2.default, { handleFormSubmit: this.handleFormSubmit.bind(this) }),
 	                renderMessage()
@@ -25156,7 +25156,7 @@
 	                    _react2.default.createElement('input', { type: 'text', ref: 'location' }),
 	                    _react2.default.createElement(
 	                        'button',
-	                        null,
+	                        { className: 'button expanded hollow' },
 	                        'Get Weather'
 	                    )
 	                )
@@ -25173,7 +25173,7 @@
 /* 226 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 	
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -25190,14 +25190,14 @@
 	        temp = _ref.temp;
 	
 	    return _react2.default.createElement(
-	        'div',
+	        "div",
 	        null,
 	        _react2.default.createElement(
-	            'h3',
-	            null,
-	            'It\'s ',
+	            "h3",
+	            { className: "text-center" },
+	            "It's ",
 	            temp,
-	            ' in ',
+	            " in ",
 	            location
 	        )
 	    );
@@ -26757,7 +26757,51 @@
 	        _react2.default.createElement(
 	            "p",
 	            null,
-	            "This is an about page"
+	            "This is a simple weather map. You can search the current temperature of any city in the world by typing the city name in the box"
+	        ),
+	        _react2.default.createElement(
+	            "h3",
+	            null,
+	            "Tool use"
+	        ),
+	        _react2.default.createElement(
+	            "ul",
+	            null,
+	            _react2.default.createElement(
+	                "li",
+	                null,
+	                _react2.default.createElement(
+	                    "a",
+	                    { href: "http://facebook.github.io/react" },
+	                    "React"
+	                ),
+	                " - This was the JavaScript framework"
+	            ),
+	            _react2.default.createElement(
+	                "li",
+	                null,
+	                _react2.default.createElement(
+	                    "a",
+	                    { href: "http://openweathermap.org" },
+	                    "Open Weatehr API"
+	                ),
+	                " - This was the API for getting weather data"
+	            )
+	        ),
+	        _react2.default.createElement(
+	            "h3",
+	            null,
+	            "Project"
+	        ),
+	        _react2.default.createElement(
+	            "li",
+	            null,
+	            _react2.default.createElement(
+	                "a",
+	                { href: "http://github.com/ParishKhan/React-Weather" },
+	                "Github"
+	            ),
+	            " - Project Source code is on Github"
 	        )
 	    );
 	};
