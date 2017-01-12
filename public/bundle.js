@@ -24860,11 +24860,14 @@
 	        null,
 	        _react2.default.createElement(_Nav2.default, null),
 	        _react2.default.createElement(
-	            'h1',
-	            null,
-	            'Main Page'
-	        ),
-	        props.children
+	            'div',
+	            { className: 'row' },
+	            _react2.default.createElement(
+	                'div',
+	                { className: 'columns medium-6 large-4 small-centered' },
+	                props.children
+	            )
+	        )
 	    );
 	};
 	
@@ -26730,7 +26733,7 @@
 /* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 	
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -26744,17 +26747,17 @@
 	
 	var About = function About(props) {
 	    return _react2.default.createElement(
-	        'div',
+	        "div",
 	        null,
 	        _react2.default.createElement(
-	            'h2',
-	            null,
-	            'About Page'
+	            "h1",
+	            { className: "text-center" },
+	            "About Page"
 	        ),
 	        _react2.default.createElement(
-	            'p',
+	            "p",
 	            null,
-	            'This is an about page'
+	            "This is an about page"
 	        )
 	    );
 	};
@@ -26775,6 +26778,8 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
+	var _reactRouter = __webpack_require__(166);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var Examples = function Examples(props) {
@@ -26782,14 +26787,36 @@
 	        'div',
 	        null,
 	        _react2.default.createElement(
-	            'h2',
-	            null,
-	            'Examples Page'
+	            'h1',
+	            { className: 'text-center' },
+	            'Examples'
 	        ),
 	        _react2.default.createElement(
 	            'p',
 	            null,
-	            'This is an Example page'
+	            'Here are few examples of location to try out'
+	        ),
+	        _react2.default.createElement(
+	            'ol',
+	            null,
+	            _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                    _reactRouter.Link,
+	                    { to: '/?location=Dhaka' },
+	                    'Dhaka, Bangladesh'
+	                )
+	            ),
+	            _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                    _reactRouter.Link,
+	                    { to: '/?location=Bogra' },
+	                    'Bogra, Rajshahi'
+	                )
+	            )
 	        )
 	    );
 	};
