@@ -29,7 +29,8 @@ module.exports = {
             Examples: 'app/components/Examples.jsx',
             WeatherForm: 'app/components/WeatherForm.jsx',
             WeatherMessage: 'app/components/WeatherMessage.jsx',
-            OpenWeatherMap: 'app/api/OpenWeatherMap.jsx'
+            OpenWeatherMap: 'app/api/OpenWeatherMap.jsx',
+            appCustomCss: 'app/styles/app.scss'
         },
         extensions: ['', '.js', '.jsx']
     },
@@ -41,6 +42,9 @@ module.exports = {
             },
             test: /\.jsx?$/,
             exclude: /(node_modules|bower_components)/
+        }, {
+            test: /\.scss$/,
+            loaders: ['style-loader', 'css-loader?sourceMap', 'sass-loader?sourceMap']
         }]
     },
     devtool: 'source-map'

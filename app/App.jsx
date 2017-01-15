@@ -4,11 +4,15 @@ import { Router, Route, Link, IndexRoute, browserHistory } from 'react-router';
 import Main from 'Main';
 import Weather from 'Weather';
 import About from 'About';
-import Examples from 'Examples'
+import Examples from 'Examples';
+import CSS from 'appCustomCss';
 
 // Load Scripts
-require('style!css!foundation-sites/dist/css/foundation.min.css');
-$(document).foundation();
+// require('style!css!foundation-sites/dist/css/foundation.min.css');
+//$(document).foundation();
+
+// Load Styles
+// require('style!css!sass!appCustomCss')
 
 ReactDOM.render(
     <Router history={browserHistory}>

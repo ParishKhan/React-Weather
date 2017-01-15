@@ -57,7 +57,7 @@ class Weather extends Component {
         }
         return (
             <div>
-                <h1 className="text-center">Get Weather</h1>
+                <h1 className="text-center page-title">Get Weather</h1>
                 <WeatherForm handleFormSubmit={this.handleFormSubmit.bind(this)} />
                 {renderMessage()}
 

@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 var About = (props) => {
     return (
         <div>
-            <h1 className="text-center">About Page</h1>
+            <h1 className="text-center page-title">About Page</h1>
             <p>This is a simple weather map. You can search the current temperature of any city in the world by typing the city name in the box</p>
 
             <h3>Tool use</h3>
