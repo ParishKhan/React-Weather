@@ -127,13 +127,6 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	// Load Scripts
-	// require('style!css!foundation-sites/dist/css/foundation.min.css');
-	//$(document).foundation();
-	
-	// Load Styles
-	// require('style!css!sass!appCustomCss')
-	
 	_reactDom2.default.render(_react2.default.createElement(
 	    _reactRouter.Router,
 	    { history: _reactRouter.browserHistory },
@@ -24912,7 +24905,12 @@
 	        key: 'onSearch',
 	        value: function onSearch(e) {
 	            e.preventDefault();
-	            alert('Not yet wired up');
+	            var location = encodeURIComponent(this.refs.navsearch.value);
+	
+	            if (location.length > 0) {
+	                this.refs.navsearch.value = '';
+	                console.log('I am locked');
+	            }
 	        }
 	    }, {
 	        key: 'render',
@@ -24965,14 +24963,14 @@
 	                    { className: 'top-bar-right' },
 	                    _react2.default.createElement(
 	                        'form',
-	                        { onSubmit: this.onSearch },
+	                        { onSubmit: this.onSearch.bind(this) },
 	                        _react2.default.createElement(
 	                            'ul',
 	                            { className: 'menu' },
 	                            _react2.default.createElement(
 	                                'li',
 	                                null,
-	                                _react2.default.createElement('input', { type: 'search', placeholder: 'Search' })
+	                                _react2.default.createElement('input', { type: 'search', placeholder: 'Search Weather', ref: 'navsearch' })
 	                            ),
 	                            _react2.default.createElement(
 	                                'li',
@@ -25067,7 +25065,11 @@
 	        key: 'handleFormSubmit',
 	        value: function handleFormSubmit(location) {
 	            var that = this;
-	            that.setState({ isLoading: true });
+	            that.setState({
+	                isLoading: true,
+	                location: undefined,
+	                temp: undefined
+	            });
 	            _OpenWeatherMap2.default.getTemp(location).then(function (temp) {
 	                that.setState({
 	                    location: location,
@@ -25085,6 +25087,16 @@
 	            var that = this;
 	            e.preventDefault();
 	            that.setState({ modalIsOpen: false });
+	        }
+	    }, {
+	        key: 'componentDidMount',
+	        value: function componentDidMount() {
+	            var location = this.props.location.query.location;
+	
+	            if (location && location.length > 0) {
+	                this.handleFormSubmit(location);
+	                window.history.pushState("object or string", "Title", "/" + window.location.href.substring(window.location.href.lastIndexOf('/') + 1).split("?")[0]);
+	            }
 	        }
 	    }, {
 	        key: 'render',
@@ -25201,7 +25213,7 @@
 	                _react2.default.createElement(
 	                    'form',
 	                    { action: '', onSubmit: this.onFormSubmit.bind(this) },
-	                    _react2.default.createElement('input', { type: 'text', ref: 'location' }),
+	                    _react2.default.createElement('input', { type: 'text', ref: 'location', placeholder: 'Search Weather By City' }),
 	                    _react2.default.createElement(
 	                        'button',
 	                        { className: 'button expanded hollow' },

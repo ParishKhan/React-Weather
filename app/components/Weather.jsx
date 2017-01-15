@@ -28,7 +28,11 @@ class Weather extends Component {
     }
     handleFormSubmit(location) {
         let that = this
-        that.setState({isLoading: true})
+        that.setState({
+            isLoading: true,
+            location: undefined,
+            temp: undefined
+        })
         OpenWeatherMap.getTemp(location).then(function(temp){
             that.setState({
                 location: location,
@@ -44,6 +48,16 @@ class Weather extends Component {
         let that = this
         e.preventDefault();
         that.setState({modalIsOpen: false})
+    }
+    componentDidMount() {
+        var location = this.props.location.query.location;
+
+        if(location && location.length > 0) {
+            this.handleFormSubmit(location);
+            window.history
+            .pushState("object or string", "Title", "/"+window.location.href.substring(window.location.href.lastIndexOf('/') + 1)
+            .split("?")[0]);
+        }
     }
     render() {
         var {location, temp, isLoading} = this.state;
